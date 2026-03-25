@@ -2,10 +2,8 @@ import mongoose from "mongoose";
 
 const connectDB = async () => {
     try {
-        const conn = await mongoose.connect(process.env.MONGO_URI, {
-            dbName: "scamdetective",
-        });
-        console.log(`MongoDB Connected`);
+        const conn = await mongoose.connect(process.env.MONGO_URI);
+        console.log(`MongoDB Atlas Connected`);
     } catch (error) {
         console.error("Database connection failed:", error);
         process.exit(1);
