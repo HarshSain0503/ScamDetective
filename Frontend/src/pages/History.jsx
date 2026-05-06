@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import API_BASE from "../config";
 
 export default function History() {
 
@@ -9,7 +10,7 @@ export default function History() {
     useEffect(() => {
         const fetchHistory = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/api/scan");
+                const res = await axios.get(`${API_BASE}/api/scan`);
                 setScans(res.data);
             } catch (err) {
                 console.log(err);

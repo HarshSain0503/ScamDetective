@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import API_BASE from "../config";
 
 import {
     Chart as ChartJS,
@@ -20,19 +21,16 @@ ChartJS.register(
 export default function Admin() {
 
     const [stats, setStats] = useState(null);
-
     const navigate = useNavigate();
-
     const token = localStorage.getItem("adminToken");
 
     useEffect(() => {
 
         const loadDashboard = async () => {
-
             try {
 
                 const res = await axios.get(
-                    "http://localhost:5000/api/admin/stats",
+                    `${API_BASE}/api/admin/stats`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`
@@ -64,7 +62,7 @@ export default function Admin() {
         try {
 
             await axios.post(
-                "http://localhost:5000/api/admin/logout",
+                `${API_BASE}/api/admin/logout`,
                 {},
                 {
                     headers: {

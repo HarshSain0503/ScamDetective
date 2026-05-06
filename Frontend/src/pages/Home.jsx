@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import API_BASE from "../config";
 
 export default function Home() {
 
@@ -28,9 +29,7 @@ export default function Home() {
 
             setLoading(true);
 
-            const response = await axios.post(
-                "http://localhost:5000/api/scan",
-                { url, alerts }
+            const response = await axios.post(`${API_BASE}/api/scan`, { url, alerts }
             );
 
             setResult(response.data);
@@ -60,12 +59,10 @@ export default function Home() {
 
         try {
 
-            const response = await axios.post(
-                "http://localhost:5000/api/report",
-                {
-                    url,
-                    message: reportMessage
-                }
+            const response = await axios.post(`${API_BASE}/api/report`, {
+                url,
+                message: reportMessage
+            }
             );
 
             if (response.data.success) {
@@ -73,9 +70,7 @@ export default function Home() {
                 setReportStatus("✅ Report submitted successfully");
                 setReportMessage("");
 
-                const scanResponse = await axios.post(
-                    "http://localhost:5000/api/scan",
-                    { url, alerts }
+                const scanResponse = await axios.post(`${API_BASE}/api/scan`, { url, alerts }
                 );
 
                 setResult(scanResponse.data);

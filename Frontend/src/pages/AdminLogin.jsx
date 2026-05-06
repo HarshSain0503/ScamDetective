@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import API_BASE from "../config";
 
 export default function AdminLogin() {
 
@@ -25,7 +26,7 @@ export default function AdminLogin() {
         try {
 
             const res = await axios.post(
-                "http://localhost:5000/api/admin/login",
+                `${API_BASE}/api/admin/login`,
                 { password }
             );
 
