@@ -14,7 +14,6 @@ const app = express();
 app.use(cors({
     origin: [
         "http://localhost:5173",
-        "https://scamdetective-2vwk.onrender.com",
         "https://scamdetective.netlify.app"
     ],
     credentials: true
