@@ -92,7 +92,7 @@ export default function Home() {
 
             {/* HOME SECTION */}
 
-            <section id="home" className="min-h-[40vh] flex flex-col justify-center items-center text-center px-6">
+            <section id="home" className="min-h-[70vh] md:min-h-[35vh] flex flex-col justify-center items-center text-center px-6">
 
                 <h1 className="text-5xl md:text-5xl font-bold mb-10">
                     AI-Powered Free Job and Internship Scam Detector
