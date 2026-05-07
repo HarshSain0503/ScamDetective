@@ -183,6 +183,13 @@ export default function Admin() {
                     <p>Suspicious Websites</p>
                 </div>
 
+                <div className="bg-green-800 p-6 rounded-xl text-center">
+                    <h2 className="text-2xl font-bold">
+                        {stats.safeCount}
+                    </h2>
+                    <p>Safe Websites</p>
+                </div>
+
                 <div className="bg-blue-900 p-6 rounded-xl text-center">
                     <h2 className="text-2xl font-bold">
                         {stats.totalReports}
