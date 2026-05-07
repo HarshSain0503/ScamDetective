@@ -1,4 +1,5 @@
 import Report from "../models/Report.js";
+import Scan from "../models/Scan.js";
 
 export const createReport = async (req, res) => {
     try {
@@ -11,14 +12,17 @@ export const createReport = async (req, res) => {
             });
         }
 
+
         // Save new report
-        const newReport = await Report.create({
-            url,
-            message
-        });
+        const newReport = await Report.create({ url, message });
 
         // Count total reports for this URL
         const reportCount = await Report.countDocuments({ url });
+        await Scan.findOneAndUpdate(
+            { url },
+            { $set: { reportCount } },
+            { sort: { createdAt: -1 } }  // update the latest scan
+        );
 
         res.status(201).json({
             success: true,

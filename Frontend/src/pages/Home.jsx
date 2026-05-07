@@ -62,18 +62,17 @@ export default function Home() {
             const response = await axios.post(`${API_BASE}/api/report`, {
                 url,
                 message: reportMessage
-            }
-            );
+            });
 
             if (response.data.success) {
 
                 setReportStatus("✅ Report submitted successfully");
                 setReportMessage("");
 
-                const scanResponse = await axios.post(`${API_BASE}/api/scan`, { url, alerts }
-                );
-
-                setResult(scanResponse.data);
+                setResult(prev => ({
+                    ...prev,
+                    reportCount: response.data.reportCount
+                }));
 
             }
 
