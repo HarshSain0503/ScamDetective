@@ -160,41 +160,31 @@ export default function Admin() {
 
             {/* Stats Cards */}
 
-            <div className="grid md:grid-cols-4 gap-6 max-w-7xl mx-auto mb-16">
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-7xl mx-auto mb-16">
 
-                <div className="bg-slate-800 p-6 rounded-xl text-center">
-                    <h2 className="text-2xl font-bold">
-                        {stats.totalScans}
-                    </h2>
-                    <p>Total Scans</p>
+                <div className="bg-slate-800 p-4 rounded-xl text-center">
+                    <h2 className="text-xl font-bold">{stats.totalScans}</h2>
+                    <p className="text-sm">Total Scans</p>
                 </div>
 
-                <div className="bg-red-900 p-6 rounded-xl text-center">
-                    <h2 className="text-2xl font-bold">
-                        {stats.scamCount}
-                    </h2>
-                    <p>Scam Websites</p>
+                <div className="bg-red-900 p-4 rounded-xl text-center">
+                    <h2 className="text-xl font-bold">{stats.scamCount}</h2>
+                    <p className="text-sm">Scam Websites</p>
                 </div>
 
-                <div className="bg-yellow-700 p-6 rounded-xl text-center">
-                    <h2 className="text-2xl font-bold">
-                        {stats.suspiciousCount}
-                    </h2>
-                    <p>Suspicious Websites</p>
+                <div className="bg-yellow-700 p-4 rounded-xl text-center">
+                    <h2 className="text-xl font-bold">{stats.suspiciousCount}</h2>
+                    <p className="text-sm">Suspicious Websites</p>
                 </div>
 
-                <div className="bg-green-800 p-6 rounded-xl text-center">
-                    <h2 className="text-2xl font-bold">
-                        {stats.safeCount}
-                    </h2>
-                    <p>Safe Websites</p>
+                <div className="bg-green-800 p-4 rounded-xl text-center">
+                    <h2 className="text-xl font-bold">{stats.safeCount}</h2>
+                    <p className="text-sm">Safe Websites</p>
                 </div>
 
-                <div className="bg-blue-900 p-6 rounded-xl text-center">
-                    <h2 className="text-2xl font-bold">
-                        {stats.totalReports}
-                    </h2>
-                    <p>User Reports</p>
+                <div className="bg-blue-900 p-4 rounded-xl text-center">
+                    <h2 className="text-xl font-bold">{stats.totalReports}</h2>
+                    <p className="text-sm">User Reports</p>
                 </div>
 
             </div>
