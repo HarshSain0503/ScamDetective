@@ -16,9 +16,19 @@ detects if it is a scam.
 
 # Architecture
 
-![Architecture](screenshots/architecture.png)
-
----
+User Browser
+↓
+React Frontend (Netlify)
+↓
+Node.js Backend (Render)
+↓ (splits into 5 parallel arrows)
+cyberChecks, aiAnalyzer, threatIntel, blacklist, domainAge  
+↓
+scoringEngine.js
+↓
+MongoDB Atlas
+↓
+Result: Safe/Suspicious/Scam
 
 # How It Works
 
@@ -152,3 +162,11 @@ ScamDetective combines:
 . Multi-layer Detection Engine
 . Threat Intelligence Integration
 . Community Reporting System
+
+# Author
+
+**Harsh Sain**  
+RHCSA Certified | Cybersecurity Enthusiast
+
+[LinkedIn]: https://www.linkedin.com/feed/
+[GitHub]: https://github.com/
